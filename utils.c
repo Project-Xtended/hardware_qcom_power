@@ -248,7 +248,7 @@ void interaction(int duration, int num_args, int opt_list[])
         if (perf_lock_acq) {
             lock_handle = perf_lock_acq(lock_handle, duration, opt_list, num_args);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGV("Failed to acquire lock.");
         }
     }
 #endif
@@ -283,7 +283,7 @@ int perf_hint_enable_with_type(int hint_id, int duration, int type)
         if (perf_hint) {
             lock_handle = perf_hint(hint_id, NULL, duration, type);
             if (lock_handle == -1)
-                ALOGE("Failed to acquire lock.");
+                ALOGV("Failed to acquire lock.");
         }
     }
     return lock_handle;
